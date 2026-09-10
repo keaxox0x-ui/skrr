@@ -300,8 +300,6 @@ document.addEventListener("click", e => {
   const button = e.target.closest("[data-action]");
   if (!button) return;
 
-  // 체크박스는 change 이벤트에서 처리하므로 click 이벤트에서는 건드리지 않습니다.
-  if (button.dataset.action === "toggle-todo") return;
 
   const { action, id } = button.dataset;
 
