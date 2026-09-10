@@ -125,7 +125,7 @@ function renderTodos() {
   el.innerHTML = sortedTodos.map(item => `
     <div class="item ${item.done ? "done" : ""}">
       <div class="item-main" style="display:flex;align-items:center;gap:9px;">
-        <input class="todo-check" type="checkbox" data-action="toggle-todo" data-id="${item.id}" ${item.done ? "checked" : ""}>
+        <input class="todo-check" type="checkbox" data-id="${item.id}" ${item.done ? "checked" : ""}>
         <div class="item-name">${escapeHTML(item.text)}</div>
       </div>
       <button class="delete-btn" data-action="delete-todo" data-id="${item.id}">삭제</button>
