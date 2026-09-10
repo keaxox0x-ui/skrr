@@ -315,19 +315,18 @@ document.addEventListener("click", e => {
 
 document.addEventListener("change", e => {
   const checkbox = e.target;
+document.addEventListener("change", e => {
+  if (!e.target.classList.contains("todo-check")) return;
 
-  if (!checkbox.matches('[data-action="toggle-todo"]')) return;
-
-  const item = data.todos.find(
-    x => String(x.id) === String(checkbox.dataset.id)
-  );
+  const id = String(e.target.dataset.id);
+  const item = data.todos.find(todo => String(todo.id) === id);
 
   if (!item) return;
 
-  item.done = checkbox.checked;
+  item.done = e.target.checked;
 
   // 체크한 시각을 저장해 두어 최근 완료 항목이 가장 아래로 가게 합니다.
-  if (checkbox.checked) {
+  if (item.done) {
     item.completedAt = Date.now();
   } else {
     delete item.completedAt;
@@ -336,5 +335,3 @@ document.addEventListener("change", e => {
   saveData();
   renderTodos();
 });
-
-renderAll();
