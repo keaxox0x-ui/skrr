@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">MY ACADEMIC DASHBOARD</p>
+      <h1>Study Dashboard</h1>
+    </div>
+    <div class="today" id="todayText"></div>
+  </header>
+
+  <main class="dashboard">
+    <section class="card hero">
+      <div>
+        <p class="eyebrow">TODAY</p>
+        <h2 id="heroDate">오늘</h2>
+        <p class="muted">오늘도 하나씩 처리하면 됩니다.</p>
+      </div>
+      <div class="hero-dday" id="heroDday"></div>
+      <div class="study-total">
+        <span>오늘 공부</span>
+        <strong id="todayStudyTotal">0분</strong>
+      </div>
+    </section>
+
+    <section class="grid two">
+      <div class="card">
+        <div class="section-title">
+          <div>
+            <p class="eyebrow">D-DAY</p>
+            <h2>중요한 날짜</h2>
+          </div>
+        </div>
+        <form id="ddayForm" class="form-row">
+          <input id="ddayName" type="text" placeholder="예: 수능" required>
+          <input id="ddayDate" type="date" required>
+          <button type="submit">추가</button>
+        </form>
+        <div id="ddayList" class="list"></div>
+      </div>
+
+      <div class="card">
+        <div class="section-title">
+          <div>
+            <p class="eyebrow">TO-DO</p>
+            <h2>오늘 할 일</h2>
+          </div>
+        </div>
+        <form id="todoForm" class="form-row">
+          <input id="todoText" type="text" placeholder="할 일을 입력하세요" required>
+          <button type="submit">추가</button>
+        </form>
+        <div id="todoList" class="list"></div>
+      </div>
+    </section>
+
+    <section class="grid two">
+      <div class="card">
+        <div class="section-title">
+          <div>
+            <p class="eyebrow">STUDY LOG</p>
+            <h2>공부 기록</h2>
+          </div>
+        </div>
+        <form id="studyForm" class="form-row">
+          <input id="studySubject" type="text" placeholder="과목" required>
+          <input id="studyMinutes" type="number" min="1" placeholder="분" required>
+          <button type="submit">기록</button>
+        </form>
+        <div id="studyList" class="list"></div>
+      </div>
+
+      <div class="card">
+        <div class="section-title">
+          <div>
+            <p class="eyebrow">TIMETABLE</p>
+            <h2>시간표</h2>
+          </div>
+        </div>
+        <form id="scheduleForm" class="form-row">
+          <select id="scheduleDay">
+            <option>월</option><option>화</option><option>수</option>
+            <option>목</option><option>금</option>
+          </select>
+          <input id="scheduleSubject" type="text" placeholder="과목" required>
+          <button type="submit">추가</button>
+        </form>
+        <div id="scheduleList" class="schedule-list"></div>
+      </div>
+    </section>
+
+    <section class="grid two">
+      <div class="card">
+        <div class="section-title">
+          <div>
+            <p class="eyebrow">CALENDAR</p>
+            <h2>캘린더</h2>
+          </div>
+        </div>
+        <input id="calendarDate" class="date-picker" type="date">
+        <div id="calendarInfo" class="calendar-info"></div>
+      </div>
+
+      <div class="card">
+        <div class="section-title">
+          <div>
+            <p class="eyebrow">NOTES</p>
+            <h2>메모</h2>
+          </div>
+        </div>
+        <form id="noteForm">
+          <textarea id="noteText" placeholder="기억해둘 내용을 적어보세요." required></textarea>
+          <button type="submit">메모 저장</button>
+        </form>
+        <div id="noteList" class="list"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>Prototype v0.2 · Data is stored in your browser</footer>
+  <script src="app.js"></script>
+</body>
+</html>
